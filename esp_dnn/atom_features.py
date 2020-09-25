@@ -250,7 +250,7 @@ def is_group(a, query_group=None):
 
 group_features = {
     "is_group_{}".format(g): functools.partial(is_group, query_group=g)
-    for g in range(1, 19) + [None]}
+    for g in list(range(1, 19)) + [None]}
 
 
 def period(a):

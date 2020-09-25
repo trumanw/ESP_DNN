@@ -123,7 +123,7 @@ def clone_model(model, new_max_hac):
     _, wts_file = mkstemp()
     try:
         model.save_weights(wts_file)
-        print "here"
+        print("here")
         X_shape = (None, new_max_hac, int(model.input[0].shape[2]))
         D_shape = (None, new_max_hac, new_max_hac)
         Y_shape = (None, new_max_hac, int(model.output.shape[2]))
@@ -132,7 +132,7 @@ def clone_model(model, new_max_hac):
         new_model.load_weights(wts_file)
         return new_model
     except:
-        print "Some error occuered while loading cloning the model"
+        print("Some error occuered while loading cloning the model")
         raise
     finally:
         os.remove(wts_file)
