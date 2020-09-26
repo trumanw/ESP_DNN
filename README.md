@@ -22,6 +22,23 @@ To run ESP-DNN, you need to:
 * setup Python and third-party dependencies.
 * (optionally) install this package.
 
+For nglview running on jupyter-lab, you may need to run the script below:
+```
+pythonversion=3.8
+nglviewversion=2.7.7
+labversion=2.1.5
+ipywidgetsversion=7.5.1
+
+conda create -n lab python=$pythonversion -y
+source activate lab
+conda install ipywidgets==$ipywidgetsversion -c conda-forge -y
+conda install nglview==$nglviewversion -c conda-forge -y
+conda install jupyterlab=$labversion  -y -c conda-forge
+jupyter-labextension install @jupyter-widgets/jupyterlab-manager
+jupyter-labextension install nglview-js-widgets@$nglviewversion
+```
+*notice* choose the right versions for each of the packages as you need.
+
 ## Cloning this repository
 See "Clone" button on this page for further information
 
