@@ -409,7 +409,7 @@ def run(mode, input_dir, output_dir, stop_on_error):
                 mcp.pdb_file2pqr_file(pdb_file, pqr_file)
             else:
                 protein_pdb_file2pqr_file(pdb_file, pqr_file)
-        except AIChargeError, e:
+        except AIChargeError as e:
             if stop_on_error:
                 raise
             else:
